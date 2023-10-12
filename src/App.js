@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useCallback, useState } from "react";
+import Myfunction from "./useCallBack";
+import PollComponent from "./PollComponent";
 
 function App() {
+  // const [count, setCount] = useState(0);
+  // const [count2, setCount2] = useState(0);
+  // const func = useCallback(() => {
+  //   console.log("this is sample function");
+  // }, [count2]);
+  // const handleClick = () => {
+  //   setCount((count) => count + 1);
+  // };
+  const data = [
+    { id: 1, label: "Multiple Blogs", voteCount: 12 },
+    { id: 2, label: "Photo Galleries", voteCount: 13 },
+    { id: 3, label: "Forums", voteCount: 14 },
+    { id: 4, label: "Online Manuals", voteCount: 15 },
+    { id: 5, label: "Easy Maintenance", voteCount: 16 },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <button style={{ display: "block" }} onClick={handleClick}>
+        {count}
+      </button>
+      <button
+        onClick={() => {
+          setCount2(count2 + 1);
+        }}
+      >
+        {count2}
+      </button>
+      <Myfunction func={func} /> */}
+      <h1>Poll Component</h1>
+      <h2>What is your favourite b2evolution feature</h2>
+      <PollComponent data={data} />
     </div>
   );
 }
